@@ -61,6 +61,7 @@ class _LoginPageState extends State<LoginPage> {
                     TextFormField(
                       autofocus: true,
                       keyboardType: TextInputType.emailAddress,
+                      obscureText: true,
                       decoration: InputDecoration(
                         labelText: "Senha",
                         labelStyle: TextStyle(color: Colors.deepPurple),
@@ -83,7 +84,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     GestureDetector(
                       onTap: (){
-                        Navigator.pushNamed(context, "/register");
+                        Navigator.pushNamed(context, "/recoverPassword");
                       },
                       child: Padding(
                         padding: const EdgeInsets.all(16.0),

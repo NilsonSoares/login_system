@@ -68,6 +68,7 @@ class _RecoverPasswordPageState extends State<RecoverPasswordPage> {
                     SizedBox(height: 16,),
                     TextFormField(
                       autofocus: true,
+                      obscureText: true,
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                         labelText: "Nova senha",
@@ -92,6 +93,7 @@ class _RecoverPasswordPageState extends State<RecoverPasswordPage> {
                     SizedBox(height: 16,),
                     TextFormField(
                       autofocus: true,
+                      obscureText: true,
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                         labelText: "Confirmar senha",

@@ -94,6 +94,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     TextFormField(
                       controller: _passwordController,
                       autofocus: true,
+                      obscureText: true,
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                         labelText: "Senha",
@@ -118,6 +119,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     SizedBox(height: 16,),
                     TextFormField(
                       autofocus: true,
+                      obscureText: true,
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                         labelText: "Confirmar senha",
