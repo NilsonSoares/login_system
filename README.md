@@ -1,16 +1,31 @@
-# login_system
+# SISTEMA DE LOGIN
 
-A new Flutter project.
+Projeto desenvolvido durante o curso de Flutter pela Raro Academy, com o objetivo de criar um sistema de login, com opção para realizar um cadastro e recuerar senha, utilizando Flutter.
 
-## Getting Started
+![splash](https://user-images.githubusercontent.com/19718447/124413171-7e285400-dd26-11eb-8777-740761b7ef60.png)  ![login](https://user-images.githubusercontent.com/19718447/124413191-854f6200-dd26-11eb-9dda-c03db5fe8c6c.png)
 
-This project is a starting point for a Flutter application.
+![recover_password](https://user-images.githubusercontent.com/19718447/124413425-f98a0580-dd26-11eb-9bae-c80d2f655019.png)  ![register](https://user-images.githubusercontent.com/19718447/124413221-913b2400-dd26-11eb-92a2-3e9b75f5d193.png)
 
-A few resources to get you started if this is your first Flutter project:
+![home](https://user-images.githubusercontent.com/19718447/124413256-9dbf7c80-dd26-11eb-9c13-af523c8b3e2a.png)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+## Tecnologias Utilizadas
+
+* Flutter
+* Dart
+
+## Conceitos Aplicados
+
+* Form
+* TextFormFielsd
+* ElevatedButton
+* Validators
+* Regex
+* MaterialApp
+* Navigator
+* NamedRoutes
+
+## Referências
+
+[Documentação do Flutter](https://flutter.dev/docs)
