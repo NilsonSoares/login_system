@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'modules/Splash/splash_page.dart';
 import 'modules/home/home_page.dart';
 import 'modules/login/login_page.dart';
+import 'modules/recover_password/recover_password_page.dart';
 import 'modules/register/register_page.dart';
 
 void main() {
@@ -16,7 +17,7 @@ void main() {
       "/login": (BuildContext context) => LoginPage(),
       "/home": (BuildContext context) => HomePage(),
       "/register": (BuildContext context) => RegisterPage(),
-      //"/recoverPassword": (BuildContext context) => RecoverPasswordPage(),
+      "/recoverPassword": (BuildContext context) => RecoverPasswordPage(),
     }
   ));
 }

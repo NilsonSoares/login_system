@@ -1,16 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:login_system/shared/validators.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({ Key? key }) : super(key: key);
+class RecoverPasswordPage extends StatefulWidget {
+  const RecoverPasswordPage({ Key? key }) : super(key: key);
 
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _RecoverPasswordPageState createState() => _RecoverPasswordPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RecoverPasswordPageState extends State<RecoverPasswordPage> {
 
   final _formKey = GlobalKey<FormState>();
+
+  TextEditingController _passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    _passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +28,9 @@ class _LoginPageState extends State<LoginPage> {
           padding: EdgeInsets.all(16.0),
           child: Column(
             children: [
-              Image.asset("images/login.png"),
+              Image.asset("images/password.png"),
               Text(
-              "Entre ou Registre-se",
+              "Recuperar senha",
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.w800,
@@ -62,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
                       autofocus: true,
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
-                        labelText: "Senha",
+                        labelText: "Nova senha",
                         labelStyle: TextStyle(color: Colors.deepPurple),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10.0),
@@ -81,20 +89,31 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       validator: (String? value) => Validators.validatePassword(value),
                     ),
-                    GestureDetector(
-                      onTap: (){
-                        Navigator.pushNamed(context, "/register");
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.all(16.0),
-                        child: Text(
-                          "Esqueci a senha",
-                          style: TextStyle(
-                            color: Colors.blue
+                    SizedBox(height: 16,),
+                    TextFormField(
+                      autofocus: true,
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: InputDecoration(
+                        labelText: "Confirmar senha",
+                        labelStyle: TextStyle(color: Colors.deepPurple),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                          borderSide: BorderSide(
+                            color: Colors.deepPurple
                           ),
                         ),
+                        errorBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                          borderSide: BorderSide(
+                            color: Colors.red
+                          ),                          
+                        ),                       
+                        prefixIcon: Icon(Icons.lock,
+                        color: Colors.deepPurple,)                        
                       ),
+                      validator: (String? value) => Validators.validateConfirmPassword(value, _passwordController.text),
                     ),
+                    SizedBox(height: 16,),
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -102,10 +121,10 @@ class _LoginPageState extends State<LoginPage> {
                         Expanded(
                           child: OutlinedButton(
                             onPressed: (){
-                              Navigator.pushReplacementNamed(context, "/register");
+                              Navigator.pushReplacementNamed(context, "/login");
                             },
                             child: Text(
-                              "Registre-se"
+                              "Cancelar"
                             ),
                             style: ButtonStyle(
                               foregroundColor: MaterialStateProperty.all(Colors.deepPurple)
@@ -117,11 +136,11 @@ class _LoginPageState extends State<LoginPage> {
                           child: ElevatedButton(
                             onPressed: (){
                               if(_formKey.currentState!.validate()){
-                                Navigator.pushReplacementNamed(context, "/home");
+                                Navigator.pushReplacementNamed(context, "/login");
                               };
                             },
                             child: Text(
-                              "Entrar"
+                              "Salvar"
                             ),
                             style: ButtonStyle(
                               backgroundColor: MaterialStateProperty.all(Colors.deepPurple)

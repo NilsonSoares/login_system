@@ -15,6 +15,12 @@ class _RegisterPageState extends State<RegisterPage> {
   TextEditingController _passwordController = TextEditingController();
 
   @override
+  void dispose() {
+    _passwordController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
@@ -109,6 +115,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                       validator: (String? value) => Validators.validatePassword(value),
                     ),
+                    SizedBox(height: 16,),
                     TextFormField(
                       autofocus: true,
                       keyboardType: TextInputType.emailAddress,
@@ -132,6 +139,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                       validator: (String? value) => Validators.validateConfirmPassword(value, _passwordController.text),
                     ),
+                    SizedBox(height: 16,),
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
